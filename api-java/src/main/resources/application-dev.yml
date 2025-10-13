@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/saa
+    username: saa
+    password: saa
+  security:
+    user:
+      name: devuser
+      password: devpass
+      

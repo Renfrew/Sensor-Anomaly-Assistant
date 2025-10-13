@@ -1,0 +1,87 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & runtime
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+hs_err_pid*
+heapdump*.hprof
+
+# Env / secrets (keep templates like .env.example)
+.env
+.env.*.local
+*.local.yml
+*.local.yaml
+*.local.properties
+
+# ===== Java / Spring =====
+# Maven
+target/
+.mvn/timing.properties
+# (keep the Maven wrapper JARs committed)
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+.bin/
+
+# STS
+.springBeans
+
+# ===== Node / Frontend =====
+node_modules/
+pnpm-lock.yaml.vercel
+.npm/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Build outputs
+dist/
+build/
+coverage/
+.cache/
+.next/
+.nuxt/
+storybook-static/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite/Parcel/Webpack
+*.tsbuildinfo
+
+# ===== VS Code =====
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# ===== Misc tools =====
+# JetBrains Fleet
+.fleet/
+
+# Docker (gitignore is fine; also create a .dockerignore)
+docker/*/tmp/
