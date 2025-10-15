@@ -20,7 +20,7 @@ jobs:
     
         - name: Build & Test
           working-directory: ./api-java
-          run: /mvnw -q -DskipITs=false verify
+          run: ./mvnw -q -DskipITs=false verify
           
     app:
         name: React Front-end CI
