@@ -1,4 +1,4 @@
-package com.thinkquark.api_java;
+package com.thinkquark.saa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

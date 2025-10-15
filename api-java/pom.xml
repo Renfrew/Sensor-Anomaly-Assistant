@@ -29,7 +29,7 @@
     <properties>
         <java.version>25</java.version>
         <springdoc.version>2.5.0</springdoc.version>
-        <start-class>com.thinkquark.saa.ApiApplication</start-class>
+        <start-class>com.thinkquark.saa.ApiJavaApplication</start-class>
     </properties>
     <dependencies>
         <!-- Spring MVC stack (keep WebFlux OUT for now) -->
@@ -110,7 +110,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.thinkquark.saa.ApiApplication</mainClass>
+                    <mainClass>com.thinkquark.saa.ApiJavaApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
