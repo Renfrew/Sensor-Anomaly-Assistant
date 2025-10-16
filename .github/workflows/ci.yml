@@ -17,6 +17,13 @@ jobs:
               distribution: 'temurin'
               java-version: '21'
               cache: maven
+
+        - name: Check file
+          run: |
+            ls -la ~
+            ls -la ~/.m2
+            cat ~/.m2/toolchains.xml
+
     
         - name: Build & Test
           working-directory: ./api-java
