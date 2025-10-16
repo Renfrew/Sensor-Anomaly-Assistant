@@ -3,6 +3,16 @@ spring:
     url: jdbc:postgresql://localhost:5432/saa
     username: saa
     password: saa
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+  flyway:
+    enabled: true
+    
   security:
     user:
       name: devuser

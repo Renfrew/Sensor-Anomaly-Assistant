@@ -1,0 +1,7 @@
+spring:
+  flyway:
+    enabled: true
+  security:
+    user:
+      name: devuser
+      password: devpass
