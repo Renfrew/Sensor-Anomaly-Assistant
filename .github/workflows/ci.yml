@@ -11,15 +11,17 @@ jobs:
         steps:
         - uses: actions/checkout@v4
         
-        - name: Set up JDK 25
+        - name: Set up JDK 21
           uses: actions/setup-java@v4
           with:
               distribution: 'temurin'
-              java-version: '25'
+              java-version: '21'
               cache: maven
     
         - name: Build & Test
           working-directory: ./api-java
+          env:
+              SPRING_PROFILES_ACTIVE: test
           run: ./mvnw -q -DskipITs=false verify
           
     app:

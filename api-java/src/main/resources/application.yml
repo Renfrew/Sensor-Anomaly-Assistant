@@ -1,13 +1,18 @@
 spring:
-  profiles:
-    active: dev
   jpa:
-    hibernate.ddl-auto: validate
+    hibernate:
+      ddl-auto: validate
     properties:
       hibernate.jdbc.time_zone: UTC
-  flyway.enabled: true
-server.port: 8080
+
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
 
 springdoc:
-  api-docs.path: /v3/api-docs
-  swagger-ui.path: /swagger-ui
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui
