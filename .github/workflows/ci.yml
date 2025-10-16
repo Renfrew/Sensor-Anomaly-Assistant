@@ -22,7 +22,7 @@ jobs:
           working-directory: ./api-java
           env:
               SPRING_PROFILES_ACTIVE: test
-          run: ./mvnw -q -DskipITs=false -Dmaven.toolchains.skip=true verify
+          run: ./mvnw -q -DskipITs=false verify
           
     app:
         name: React Front-end CI

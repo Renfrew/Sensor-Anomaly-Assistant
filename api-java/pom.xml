@@ -127,7 +127,7 @@
                 <configuration>
                     <toolchains>
                         <jdk>
-                            <version>[21,22)</version>
+                            <version>${java.version}</version>
                             <vendor>any</vendor>
                         </jdk>
                     </toolchains>
@@ -138,7 +138,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <release>21</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
         </plugins>
