@@ -5,4 +5,3 @@ spring:
     user:
       name: devuser
       password: devpass
-      
