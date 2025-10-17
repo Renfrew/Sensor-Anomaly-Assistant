@@ -14,9 +14,9 @@ public interface ReadingRepo extends JpaRepository<Reading, Long> {
     @Query("""
         SELECT r FROM Reading r
         WHERE r.device.id = :deviceId
-          AND (:fromTs IS NULL OR r.ts >= :fromTs)
-          AND (:toTs IS NULL OR r.ts <= :toTs)
-          AND (:minSeverity IS NULL OR r.severity >= :minSeverity)
+          AND r.ts >= COALESCE(:fromTs, r.ts)
+          AND r.ts <= COALESCE(:toTs, r.ts)
+          AND r.severity >= COALESCE(:minSeverity, r.severity)
         ORDER BY r.ts DESC, r.id DESC
     """)
     List<Reading> firstPage(
@@ -30,9 +30,9 @@ public interface ReadingRepo extends JpaRepository<Reading, Long> {
     @Query("""
         SELECT r FROM Reading r
         WHERE r.device.id = :deviceId
-          AND (:fromTs IS NULL OR r.ts >= :fromTs)
-          AND (:toTs IS NULL OR r.ts <= :toTs)
-          AND (:minSeverity IS NULL OR r.severity >= :minSeverity)
+          AND r.ts >= COALESCE(:fromTs, r.ts)
+          AND r.ts <= COALESCE(:toTs, r.ts)
+          AND r.severity >= COALESCE(:minSeverity, r.severity)
           AND ( (r.ts < :cursorTs) OR (r.ts = :cursorTs AND r.id < :cursorId) )
         ORDER BY r.ts DESC, r.id DESC
     """)

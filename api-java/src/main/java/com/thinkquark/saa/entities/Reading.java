@@ -2,6 +2,8 @@ package com.thinkquark.saa.entities;
 
 import java.time.Instant;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -27,7 +29,8 @@ public class Reading {
 
     private String reason;
 
-    @Column(name = "created_at", nullable = false)
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 
     public Reading() { }
@@ -38,6 +41,13 @@ public class Reading {
         this.value = value;
         this.severity = severity;
         this.reason = reason;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (createdAt == null) {
+            createdAt = Instant.now();
+        }
     }
 
     public Long getId() {
