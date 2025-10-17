@@ -3,6 +3,8 @@ package com.thinkquark.saa.entities;
 import java.time.Instant;
 import java.util.UUID;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -17,7 +19,8 @@ public class Device {
 
     private String description;
 
-    @Column(name = "created_at", nullable = false)
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
     public Device() { }
@@ -25,6 +28,17 @@ public class Device {
     public Device(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (id == null) {
+            id = UUID.randomUUID();
+        }
+        
+        if (createdAt == null) {
+            createdAt = Instant.now();
+        }
     }
 
     // Getters and Setters

@@ -19,16 +19,16 @@ import com.thinkquark.saa.services.DeviceService;
 @RequestMapping("/api/devices")
 public class DeviceController {
     private final DeviceService svc;
+
     public DeviceController(DeviceService svc) {
         this.svc = svc;
     }
 
     @GetMapping
     public Page<DeviceDTO> list(
-        @RequestParam(required = false) String search,
-        @RequestParam(defaultValue = "0") int page,
-        @RequestParam(defaultValue = "20") int limit
-    ) {
+            @RequestParam(required = false) String search,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int limit) {
         return svc.list(search, page, limit);
     }
 
