@@ -18,7 +18,8 @@ public class SecurityConfig {
                                 "/health",
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
-                                "/api/devices/**")
+                                "/api/devices/**",
+                                "/api/readings/**")
                         .permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults());
